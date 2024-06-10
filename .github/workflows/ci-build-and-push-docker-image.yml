@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
-        run: echo "Hello world 2"
+        run: echo "Hello from develop 2"
         # uses: actions/checkout@v2.5.0
 
       # - name: Login to DockerHub

@@ -14,7 +14,7 @@ jobs:
   test-backend:
     runs-on: ubuntu-22.04
     steps:
-      - run: echo "Hello World 1"
+      - run: echo "Hello from develop 1"
       # - uses: actions/checkout@v2.5.0
 
       # - name: Set up JDK 17
