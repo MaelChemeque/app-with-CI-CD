@@ -93,3 +93,7 @@ La commande maven utilisé avec sonar prend un argument --file, donc il a fallu 
 J'ai utilisé la commande : mvn -B verify sonar:sonar -Dsonar.projectKey=MaelChemeque_app-with-CI-CD -Dsonar.organization=maelchemeque -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./backend/pom.xml
 
 Remarque : j'aurais sûrement dû utiliser des noms plus parlants pour "organization" et "projectKey".
+
+> Bonus
+
+cf : ci-test-backend.yml et ci-build-and-push-docker-image.yml
