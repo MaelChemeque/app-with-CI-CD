@@ -1,0 +1,22 @@
+name: CI devops 2024
+on:
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+
+jobs:
+  test-backend:
+    runs-on: ubuntu-22.04
+    steps:
+      # Récupération du code source depuis le repository GitHub
+      - uses: actions/checkout@v2.5.0
+
+      # Configuration de l'environnement Java avec JDK 17
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+
+      # Construction et tests du projet avec Maven
+      - name: Build and test with Maven
+        run: mvn clean verify
