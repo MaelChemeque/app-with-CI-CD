@@ -86,3 +86,10 @@ On définit qu'on va faire tourner les actions sur ubuntu 22.
 On récupère le code source du dépôt pour pouvoir le tester ensuite dans l'environnement de CI.
 On configure les environnements dans lesquels on veut tester notre backend.
 On exécute la commande maven mvn clean verify dans le répertoire de travail ./backend.
+
+> Document your quality gate configuration.
+
+La commande maven utilisé avec sonar prend un argument --file, donc il a fallu retirer la ligne de contexte.
+J'ai utilisé la commande : mvn -B verify sonar:sonar -Dsonar.projectKey=MaelChemeque_app-with-CI-CD -Dsonar.organization=maelchemeque -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./backend/pom.xml
+
+Remarque : j'aurais sûrement dû utiliser des noms plus parlants pour "organization" et "projectKey".
