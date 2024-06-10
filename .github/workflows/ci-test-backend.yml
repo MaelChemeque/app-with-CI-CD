@@ -5,16 +5,18 @@ on:
     branches:
       - develop
       - main
+      - develop2
   pull_request:
     branches:
       - develop
       - main
+      - develop2
 
 jobs:
   test-backend:
     runs-on: ubuntu-22.04
     steps:
-      - run: echo "Hello World 1"
+      - run: exit 1
       # - uses: actions/checkout@v2.5.0
 
       # - name: Set up JDK 17

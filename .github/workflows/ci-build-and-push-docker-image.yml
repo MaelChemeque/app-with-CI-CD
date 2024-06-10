@@ -3,7 +3,6 @@ name: CI Build and Push Docker Image
 on:
   workflow_run:
     workflows: ["CI Test Backend"]
-    branches: [main]
     types: [completed]
 
 jobs:
@@ -12,7 +11,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
-        run: echo "Hello world 2"
+        run: echo "Hello from develop2 2"
         # uses: actions/checkout@v2.5.0
 
       # - name: Login to DockerHub
