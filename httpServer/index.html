@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Data from Backend</title>
+  </head>
+  <body>
+    <h1>Data from Backend</h1>
+    <div id="data-container">
+      <!-- Les données seront affichées ici -->
+    </div>
+    <script>
+      // URL de votre backend
+      const backendUrl = "http://localhost:8080/departments/IRC/students";
+
+      // Fonction pour récupérer et afficher les données
+      async function fetchData() {
+        try {
+          const response = await fetch(backendUrl);
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          const data = await response.json();
+          displayData(data);
+        } catch (error) {
+          console.error(
+            "Il y a eu un problème avec la récupération des données:",
+            error
+          );
+        }
+      }
+
+      // Fonction pour afficher les données dans le HTML
+      function displayData(data) {
+        const container = document.getElementById("data-container");
+        container.innerHTML = ""; // Vider le conteneur
+
+        data.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.textContent = JSON.stringify(item, null, 2); // Convertir l'objet en chaîne JSON formatée
+          container.appendChild(itemDiv);
+        });
+      }
+
+      // Appel de la fonction fetchData au chargement de la page
+      window.onload = fetchData;
+    </script>
+  </body>
+</html>
