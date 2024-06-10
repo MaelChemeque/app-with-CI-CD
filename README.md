@@ -78,3 +78,11 @@ docker push maelchemeque/my-http-server:1.0
 > 2-1 What are testcontainers ?
 
 Ce sont des bibliothèques Java permettant de faire tourner les tests dans un environnement isolé reflétant celui de production.
+
+> 2-2 Document your Github Actions configurations.
+
+On définit que les actions doivent être exécutées uniquement lors du push sur develop ou main.
+On définit qu'on va faire tourner les actions sur ubuntu 22.
+On récupère le code source du dépôt pour pouvoir le tester ensuite dans l'environnement de CI.
+On configure les environnements dans lesquels on veut tester notre backend.
+On exécute la commande maven mvn clean verify dans le répertoire de travail ./backend.
